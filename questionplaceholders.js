@@ -78,7 +78,7 @@ function qph(z) {
         var blankline = document.createElement("br");
         document.body.appendChild(blankline);
 
-        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // ------------------------------------------------------------------------------------
 
         var submitb = document.createElement("button");
         submitb.setAttribute("id", "submitmca");
@@ -93,7 +93,7 @@ function qph(z) {
             submit()
         });
 
-        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // ------------------------------------------------------------------------------------
 
         var blankline = document.createElement("br");
         document.body.appendChild(blankline);
@@ -105,7 +105,7 @@ function qph(z) {
         var blankline = document.createElement("br");
         document.body.appendChild(blankline);
 
-        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // ------------------------------------------------------------------------------------
 
         scoreplace = document.createElement("div");
         scoreplace.setAttribute("id", "s");
@@ -114,7 +114,16 @@ function qph(z) {
         var blankline = document.createElement("br");
         document.body.appendChild(blankline);
 
-        // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+        // ------------------------------------------------------------------------------------
+
+        timerplace = document.createElement("div");
+        timerplace.setAttribute("id", "t");
+        document.body.append(timerplace);
+
+        var blankline = document.createElement("br");
+        document.body.appendChild(blankline);
+
+        // ------------------------------------------------------------------------------------
         firstTime = 0;
 
     }
