@@ -1,3 +1,9 @@
+// Declare Global Variables
+var highScoreList = document.querySelector("#hs");
+// var highScore = ["0 ------ default"];
+var highScore = [];
+var dhighScore = document.querySelector("#dhS")
+
 var val = "";
 var z = 0;
 firstTime = 0;
@@ -10,23 +16,20 @@ startpage();
 
 function writeqandmc(z) {
 
-    console.log("z = " + z);
-    console.log("ini from writequestions = " + ini);
     var pushquestion = document.getElementById("q");
     var pushmc1 = document.getElementById("c1");
     var pushmc2 = document.getElementById("c2");
     var pushmc3 = document.getElementById("c3");
     var pushmc4 = document.getElementById("c4");
 
-    // console.log("z = " + z);
-
-    // console.log(questions[z].qu);
     // Display current question and choices
     pushquestion.innerHTML = questions[z].qu;
     pushmc1.innerHTML = questions[z].mc1;
     pushmc2.innerHTML = questions[z].mc2;
     pushmc3.innerHTML = questions[z].mc3;
     pushmc4.innerHTML = questions[z].mc4;
+
+    renderHighScore();
 
 }
 
@@ -39,30 +42,23 @@ function submit() {
     event.preventDefault();
     var radios = document.getElementsByName('choice');
     for (var x = 0, length = radios.length; x < length; x++) {
-        // console.log("x = " + x);
-        // console.log("length = " + length);
-        // console.log("radios[x].checked = " + radios[x].checked);
         if (radios[x].checked) {
             val = radios[x].value;
-            // console.log("**val** = " + val);
             break;
         }
     }
-    // console.log("z = " + z);
-    // console.log("val = " + val);
-    // console.log("questions[z].a = " + questions[z].a);
+
     if (questions[z].a === val) {
-        // alert('Correct Answer');
         pushrorw.innerHTML = ("Your Answer is Correct...")
         score++
         pushscore.innerHTML = ("Score = " + score);
     } else {
-        // alert('Answer is not Correct');
         pushrorw.innerHTML = ("Your Answer is Not Correct...")
         timeleft = timeleft - 30;
         pushtimerplace.innerHTML = "Time remaining = " + (timeleft) + " seconds";
 
     }
+
 
     z++;
 
@@ -73,15 +69,50 @@ function submit() {
 
         writeqandmc(z);
     } else {
-        cleanuphtml();
-        document.write("game over...  Would you like to store your score?")
-        writescore();
+        // cleanuphtml();
+        //------------------------------------------------------------------------------------
+
+        initialsplace = document.createElement("input");
+        initialsplace.setAttribute("id", "ini");
+        initialsplace.innerHTML = "Enter your initials and click to save high score";
+        initialsplace.autofocus = true;
+        document.body.append(initialsplace);
+
+        var blankline = document.createElement("br");
+        document.body.appendChild(blankline);
+
+        var blankline = document.createElement("br");
+        document.body.appendChild(blankline);
+
+        // ------------------------------------------------------------------------------------
+
+        var saveb = document.createElement("button");
+        saveb.setAttribute("id", "savehs");
+        saveb.innerHTML = "Save";
+        document.body.appendChild(saveb);
+
+        var blankline = document.createElement("br");
+        document.body.appendChild(blankline);
+
+        document.getElementById("savehs").addEventListener("click", function(event) {
+            // var initials = document.getElementById("ini").innerHTML;
+            var initials = document.querySelector("#ini");
+            console.log("initials in save button = " + initials.value);
+            writescore(initials.value);
+        });
+
+        // ------------------------------------------------------------------------------------
+
+
     }
+    val = "";
 
 }
 
-function writescore() {
+function writescore(ini) {
 
+    storeHighScore(score, ini);
+    renderHighScore();
 
 }
 
@@ -107,24 +138,8 @@ function startpage() {
 
     titleplace = document.createElement("h2");
     titleplace.setAttribute("id", "th2");
-    titleplace.innerHTML = "Enter your initials and click Start to begin...";
+    titleplace.innerHTML = "Click Start to begin...";
     document.body.append(titleplace);
-
-    // ------------------------------------------------------------------------------------
-
-    initialsplace = document.createElement("input");
-    initialsplace.setAttribute("id", "ini");
-    initialsplace.innerHTML = "Enter your initials and click Start to begin...";
-    initialsplace.autofocus = true;
-    document.body.append(initialsplace);
-
-    var blankline = document.createElement("br");
-    document.body.appendChild(blankline);
-
-    var blankline = document.createElement("br");
-    document.body.appendChild(blankline);
-
-    // ------------------------------------------------------------------------------------
 
     var startb = document.createElement("button");
     startb.setAttribute("id", "startquiz");
@@ -134,32 +149,87 @@ function startpage() {
     var blankline = document.createElement("br");
     document.body.appendChild(blankline);
 
-    var iniinput = document.getElementById("ini");
-    console.log(iniinput.value);
-
 
     document.getElementById("startquiz").addEventListener("click", function(event) {
-        startq(iniinput.value);
+        startq();
     });
 
-    // document.getElementById("startquiz").addEventListener("submit", function(event) {
-    //     startq()
     // });
 
     // ------------------------------------------------------------------------------------
 
 }
 
-function startq(ini) {
+function startq() {
     event.preventDefault();
     cleanuphtml(); //clear the page
     firstTime = 1;
     qph(); //write question place holders
     // var iniinput = document.getElementById("ini");
-    console.log(ini);
+    // console.log(ini);
 
     var pushtimerplace = document.getElementById("t");
     pushtimerplace.innerHTML = "Time remaining = " + (timeleft) + " seconds";
     writeqandmc(z);
 
 }
+
+init();
+console.log("highScore" + highScore);
+
+function init(parameter) {
+    var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
+    console.log("storedHighScore = " + storedHighScore);
+    if (storedHighScore !== null) {
+        highScore = storedHighScore;
+    }
+}
+
+function storeHighScore(score, ini) {
+    console.log("Score = " + score);
+    console.log("initials = " + ini);
+    writeHighScore = score + " ------ " + ini;
+    console.log("writeHighScore = " + writeHighScore);
+    console.log("highScore = " + highScore);
+    highScore.push(writeHighScore);
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+    console.log("highScore = " + highScore);
+}
+
+function renderHighScore() {
+
+    // var lihighScore = document.createElement("h2");
+    var dhighScore = document.querySelector("#dhS")
+    dhighScore.innerHTML = "";
+    var container = document.createElement("div");
+
+    for (let i = 0; i < highScore.length; i++) {
+        var displayhighScore = highScore[i];
+        var lihighScore = document.createElement("h2");
+
+        lihighScore.textContent = displayhighScore;
+        lihighScore.setAttribute("data-index", i);
+
+        var button = document.createElement("button");
+        button.textContent = "Delete";
+
+        lihighScore.appendChild(button);
+        container.appendChild(lihighScore);
+    }
+    // dhighScore.innerHTML = lihighScore.textContent;
+    dhighScore.appendChild(container);
+}
+
+
+button.getElementById("startquiz").addEventListener("click", function(event) {
+    event.preventDefault();
+    var element = event.target;
+
+    if (element.matches("button") === true) {
+        var index = element.parentElement.getAttribute("data-index");
+        highScores.splice(index, 1);
+        storeHighScore();
+        renderHighScore();
+    }
+
+});

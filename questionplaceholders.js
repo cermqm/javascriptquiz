@@ -124,6 +124,33 @@ function qph(z) {
         document.body.appendChild(blankline);
 
         // ------------------------------------------------------------------------------------
+
+        pushhighScore = document.createElement("h2");
+        pushhighScore.setAttribute("id", "dhS");
+        pushhighScore.innerHTML = "High Scores";
+        document.body.append(pushhighScore);
+
+        //------------------------------------------------------------------------------------
+
+        pushhighScore = document.createElement("h2");
+        pushhighScore.setAttribute("id", "dhS");
+        pushhighScore.innerHTML = "High Scores";
+        document.body.append(pushhighScore);
+
+        var blankline = document.createElement("br");
+        document.body.appendChild(blankline);
+
+        // ------------------------------------------------------------------------------------
+
+        // highScoreplace = document.createElement("ul");
+        // highScoreplace.setAttribute("id", "hs");
+        // document.body.append(highScoreplace);
+
+        // var blankline = document.createElement("br");
+        // document.body.appendChild(blankline);
+
+        // // ------------------------------------------------------------------------------------
+
         firstTime = 0;
 
     }
