@@ -48,7 +48,7 @@ function renderHighScore() {
         console.log("highScore.score = " + highScore.score);
         console.log("highScore.initials = " + highScore.initials);
 
-        $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html("Highscore - " + highScore.score + "  ------  " + highScore.initials);
+        $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
     }
 
 }
