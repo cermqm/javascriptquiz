@@ -107,10 +107,10 @@ function init(parameter) {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
-        highScore = storedHighScore;
-        console.log("highScore = " + highScore);
-        console.log("highScore.score = " + highScore.score);
-        console.log("highScore.initials = " + highScore.initials);
+        highScorearray = storedHighScore;
+        console.log("highScorearray = " + highScore);
+        // console.log("highScore.score = " + highScore.score);
+        // console.log("highScore.initials = " + highScore.initials);
 
     }
 }
@@ -118,8 +118,13 @@ function init(parameter) {
 function storeHighScore(score, initials) {
     console.log("Score = " + score);
     console.log("initials = " + initials);
-    var highScorestring = '{ score: ' + score + ', initials: ' + initials + ' }';
+    // var highScorestring = '{ "score:" ' + score + ', "initials:" ' + '"' + initials + '"' + ' }';
+    var highScorestring = { score: score, initials: initials };
+    console.log("highScorestring line 125 = " + highScorestring);
+
     highScorehold = highScorestring;
+    console.log("highScorehold.score = " + highScorearray.score);
+    console.log("highScorehold.initials = " + highScorearray.initials);
     highScorearray.push(highScorehold);
     console.log("highScorearray = " + highScorearray);
     // writeHighScore = score + " ------ " + ini;
@@ -128,6 +133,7 @@ function storeHighScore(score, initials) {
     // highScore.push(writeHighScore);
     localStorage.setItem("highScore", JSON.stringify(highScorearray));
     console.log("highScorearray = " + highScorearray);
-    // console.log("highScore = " + highScore);
+    console.log("highScorearray[0] = " + highScorearray[0])
+        // console.log("highScore = " + highScore);
     window.location.href = "highscores.html";
 }
