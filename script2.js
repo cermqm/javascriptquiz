@@ -67,6 +67,7 @@ function submit() {
             var initials = document.querySelector("#ini");
             console.log("initials in save button = " + initials.value);
             writescore(initials.value);
+            window.location.href = "highscore.html";
         });
 
         // ------------------------------------------------------------------------------------
