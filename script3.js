@@ -22,10 +22,10 @@ function init(parameter) {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
-        highScore = storedHighScore;
-        console.log("highScore = " + highScore);
-        console.log("highScore.score = " + highScore.score);
-        console.log("highScore.initials = " + highScore.initials);
+        highScorearray = storedHighScore;
+        console.log("highScorearray = " + highScorearray);
+        // console.log("highScore.score = " + highScore.score);
+        // console.log("highScore.initials = " + highScore.initials);
 
     }
 }
@@ -38,12 +38,13 @@ function renderHighScore() {
     $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
     $("#dhS").empty();
 
-    var counthighScore = Object.keys(highScore).length;
-    var halfofcounthighScore = (counthighScore / 2);
-    console.log("counthighScore = " + counthighScore);
-    console.log("halfofcounthighScore = " + halfofcounthighScore);
+    // var counthighScore = Object.keys(highScore).length;
+    // var halfofcounthighScore = (counthighScore / 2);
+    // console.log("counthighScore = " + counthighScore);
+    // console.log("halfofcounthighScore = " + halfofcounthighScore);
 
-    for (let i = 0; i < halfofcounthighScore; i++) {
+    for (let i = 0; i < highScorearray.length; i++) {
+        highscore = highscorearray[i]
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html("Highscore - " + highScore.score + "------" + highScore.initials);
     }
 
