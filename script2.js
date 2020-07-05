@@ -2,6 +2,7 @@
 var highScoreList = document.querySelector("#hs");
 // var highScore = [];
 var highScore = {};
+var highScorehold = {};
 var highScoreobj = [];
 var dhighScore = document.querySelector("#dhS")
 
@@ -117,13 +118,14 @@ function init(parameter) {
 function storeHighScore(score, ini) {
     console.log("Score = " + score);
     console.log("initials = " + ini);
-    highScore.score = score;
-    highScore.initials = ini;
+    highScorehold.score = score;
+    highScorehold.initials = ini;
+    highScore.push(highScorehold);
     // writeHighScore = score + " ------ " + ini;
     // console.log("writeHighScore = " + writeHighScore);
     // console.log("highScore = " + highScore);
     // highScore.push(writeHighScore);
     localStorage.setItem("highScore", JSON.stringify(highScore));
-    console.log("highScore = " + highScore);
+    // console.log("highScore = " + highScore);
     window.location.href = "highscores.html";
 }
