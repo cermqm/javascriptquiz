@@ -32,9 +32,11 @@ function renderHighScore() {
     $("#dhS").empty();
 
     var counthighScore = Object.keys(highScore).length;
+    var halfofcounthighscore = (counthighScore / 2);
     console.log("counthighScore = " + counthighScore);
+    console.log("halfcounthighScore = " + halfcounthighScore);
 
-    for (let i = 0; i < counthighScore; i++) {
+    for (let i = 0; i < halfcounthighScore; i++) {
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html("Highscore - " + highScore.score + "------" + highScore.initials);
     }
 
