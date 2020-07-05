@@ -16,10 +16,15 @@ renderHighScore();
 
 
 function init(parameter) {
+    console.log("in init...")
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
         highScore = storedHighScore;
+        console.log("highScore = " + highScore);
+        console.log("highScore.score = " + highScore.score);
+        console.log("highScore.initials = " + highScore.initials);
+
     }
 }
 
