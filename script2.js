@@ -107,6 +107,9 @@ function init(parameter) {
     if (storedHighScore !== null) {
         highScore = storedHighScore;
         console.log("highScore = " + highScore);
+        console.log("highScore.score = " + highScore.score);
+        console.log("highScore.initials = " + highScore.initials);
+
     }
 }
 
