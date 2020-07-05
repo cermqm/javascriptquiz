@@ -50,9 +50,9 @@ function submit() {
     }
 
     z++;
-    console.log("z = " + z);
-    console.log("questions.length = " + questions.length);
-    console.log("timeleft = " + timeleft);
+    // console.log("z = " + z);
+    // console.log("questions.length = " + questions.length);
+    // console.log("timeleft = " + timeleft);
     if ((z < questions.length) && (timeleft >= 0)) {
         var radiochoose = document.getElementsByName("choice");
         for (var i = 0; i < radiochoose.length; i++)
