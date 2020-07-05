@@ -13,20 +13,13 @@ timeleft = 450;
 var ini = "";
 
 init();
-// console.log("highScore = " + highScore);
 renderHighScore();
 
 
 function init(parameter) {
-    console.log("in init...")
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
-    // console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
         highScorearray = storedHighScore;
-        console.log("highScorearray = " + highScorearray);
-        // console.log("highScore.score = " + highScore.score);
-        // console.log("highScore.initials = " + highScore.initials);
-
     }
 }
 
@@ -38,15 +31,9 @@ function renderHighScore() {
     $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
     $("#dhS").empty();
 
-    console.log("highScorearray = " + highScorearray);
-
     for (let i = 0; i < highScorearray.length; i++) {
-        console.log("in for loop....");
-        console.log("highScorearray[i] = " + highScorearray[i]);
+
         highScore = highScorearray[i];
-        console.log("highScore = " + highScore);
-        console.log("highScore.score = " + highScore.score);
-        console.log("highScore.initials = " + highScore.initials);
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
         if (i >= 4) {
             i = highScorearray.length;

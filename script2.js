@@ -50,9 +50,7 @@ function submit() {
     }
 
     z++;
-    // console.log("z = " + z);
-    // console.log("questions.length = " + questions.length);
-    // console.log("timeleft = " + timeleft);
+
     if ((z < questions.length) && (timeleft >= 0)) {
         var radiochoose = document.getElementsByName("choice");
         for (var i = 0; i < radiochoose.length; i++)
@@ -63,17 +61,13 @@ function submit() {
         $("<div>").insertAfter("#t2").attr({ id: "ini1" }).html("</br>");
         $("<input>").insertAfter("#ini1").attr({ type: "text", id: "ini" });
         $("<div>").insertAfter("#ini").attr({ id: "ini2" }).html("</br></br></br>");
-
         $("<h2>").insertAfter("#ini2").attr({ id: "ini3", type: "button", class: "btn btn-success" }).html("Enter your initials and click to save high score...");
-
         $("#ini3").on("click", function() {
             var initials = document.querySelector("#ini");
             console.log("initials in save button = " + initials.value);
             writescore(initials.value);
         });
-
         // ------------------------------------------------------------------------------------
-
     }
     val = "";
 
@@ -100,40 +94,19 @@ function startq() {
 }
 
 init();
-console.log("highScore = " + highScore);
 
 function init(parameter) {
-    console.log("in init...")
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
-    console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
         highScorearray = storedHighScore;
-        console.log("highScorearray = " + highScore);
-        // console.log("highScore.score = " + highScore.score);
-        // console.log("highScore.initials = " + highScore.initials);
 
     }
 }
 
 function storeHighScore(score, initials) {
-    console.log("Score = " + score);
-    console.log("initials = " + initials);
-    // var highScorestring = '{ "score:" ' + score + ', "initials:" ' + '"' + initials + '"' + ' }';
     var highScorestring = { score: score, initials: initials };
-    console.log("highScorestring line 125 = " + highScorestring);
-
     highScorehold = highScorestring;
-    console.log("highScorehold.score = " + highScorearray.score);
-    console.log("highScorehold.initials = " + highScorearray.initials);
     highScorearray.push(highScorehold);
-    console.log("highScorearray = " + highScorearray);
-    // writeHighScore = score + " ------ " + ini;
-    // console.log("writeHighScore = " + writeHighScore);
-    // console.log("highScore = " + highScore);
-    // highScore.push(writeHighScore);
     localStorage.setItem("highScore", JSON.stringify(highScorearray));
-    console.log("highScorearray = " + highScorearray);
-    console.log("highScorearray[0] = " + highScorearray[0])
-        // console.log("highScore = " + highScore);
     window.location.href = "highscores.html";
 }
