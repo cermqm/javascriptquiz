@@ -42,9 +42,11 @@ function renderHighScore() {
     // var halfofcounthighScore = (counthighScore / 2);
     // console.log("counthighScore = " + counthighScore);
     // console.log("halfofcounthighScore = " + halfofcounthighScore);
+    console.log("highScorearray = " + highScorearray);
 
     for (let i = 0; i < highScorearray.length; i++) {
-        highscore = highscorearray[i]
+        console.log("in for loop....");
+        highScore = highScorearray[i];
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html("Highscore - " + highScore.score + "------" + highScore.initials);
     }
 
