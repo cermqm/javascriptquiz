@@ -1,6 +1,7 @@
 // Declare Global Variables
 var highScoreList = document.querySelector("#hs");
-var highScore = [];
+// var highScore = [];
+var highScore = {};
 var dhighScore = document.querySelector("#dhS")
 
 
@@ -110,12 +111,13 @@ function init(parameter) {
 function storeHighScore(score, ini) {
     console.log("Score = " + score);
     console.log("initials = " + ini);
-    writeHighScore = score + " ------ " + ini;
-    console.log("writeHighScore = " + writeHighScore);
-    console.log("highScore = " + highScore);
-    highScore.push(writeHighScore);
+    highScore.score = score;
+    highScore.initials = ini;
+    // writeHighScore = score + " ------ " + ini;
+    // console.log("writeHighScore = " + writeHighScore);
+    // console.log("highScore = " + highScore);
+    // highScore.push(writeHighScore);
     localStorage.setItem("highScore", JSON.stringify(highScore));
     console.log("highScore = " + highScore);
     window.location.href = "highscores.html";
-
 }
