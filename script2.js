@@ -118,7 +118,8 @@ function init(parameter) {
 function storeHighScore(score, ini) {
     console.log("Score = " + score);
     console.log("initials = " + ini);
-    highScorehold = { "score:" + highScorehold.score, "initials: " + highScorehold.initials };
+    var highScorestring = '{ score: ' + highScorehold.score + ', initials: ' + highScorehold.initials + ' }';
+    highScorehold = highScorestring;
     highScorearray.push(highScorehold);
     console.log("highScorearray = " + highScorearray);
     // writeHighScore = score + " ------ " + ini;
