@@ -53,9 +53,9 @@ function qph(z) {
 
         //------------------------------------------------------------------------------------
 
-        // $("<div>").insertAfter("#t2").attr({ id: "ss" }).html("</br>");
-        // $("<h2>").insertAfter("#ss").attr({ id: "ss2" }).html("Top 5 High Scores");
-        // $("<h4>").insertAfter("#ss2").attr({ id: "dhS" });
+        // $("<div>").insertAfter("#insidecard").attr({ id: "ic1" }).html("</br>");
+        // $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
+        // $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
 
         // pushhighScore = document.createElement("h2");
         // pushhighScore.setAttribute("id", "dhS");

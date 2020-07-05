@@ -16,6 +16,10 @@ function renderHighScore() {
 
     // var lihighScore = document.createElement("h2");
 
+    $("<div>").insertAfter("#insidecard").attr({ id: "ic1" }).html("</br>");
+    $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
+    $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
+
     // pushhighScoreLabel = document.createElement("h2");
     // pushhighScoreLabel.innerHTML = "High Scores";
     // document.body.append(pushhighScoreLabel);

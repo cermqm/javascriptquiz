@@ -20,7 +20,7 @@ function writeqandmc(z) {
     $('#c3').html(questions[z].mc3);
     $('#c4').html(questions[z].mc4);
 
-    renderHighScore();
+    // renderHighScore();
 
 }
 
