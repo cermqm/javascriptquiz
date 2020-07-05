@@ -20,8 +20,8 @@ function renderHighScore() {
     // pushhighScoreLabel.innerHTML = "High Scores";
     // document.body.append(pushhighScoreLabel);
 
-    // var dhighScore = document.querySelector("#dhS")
-    // dhighScore.innerHTML = "";
+    var dhighScore = document.querySelector("#dhS")
+    dhighScore.innerHTML = "";
     var container = document.createElement("div");
 
     for (let i = 0; i < highScore.length; i++) {
