@@ -3,7 +3,7 @@ var highScoreList = document.querySelector("#hs");
 // var highScore = [];
 var highScore = {};
 var highScorehold = {};
-var highScoreobj = [];
+var highScorearray = [];
 var dhighScore = document.querySelector("#dhS")
 
 
@@ -119,7 +119,8 @@ function storeHighScore(score, ini) {
     console.log("Score = " + score);
     console.log("initials = " + ini);
     highScorehold = "score:" + highScorehold.score, "initials: " + highScorehold.initials;
-    highScore.push(highScorehold);
+    highScorearray.push(highScorehold);
+    console.log("highScorearray = " + highScorearray);
     // writeHighScore = score + " ------ " + ini;
     // console.log("writeHighScore = " + writeHighScore);
     // console.log("highScore = " + highScore);
