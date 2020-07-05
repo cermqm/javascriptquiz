@@ -32,7 +32,7 @@ function renderHighScore() {
     $("#dhS").empty();
 
     var counthighScore = Object.keys(highScore).length;
-    var halfofcounthighscore = (counthighScore / 2);
+    var halfofcounthighScore = (counthighScore / 2);
     console.log("counthighScore = " + counthighScore);
     console.log("halfofcounthighScore = " + halfofcounthighScore);
 
