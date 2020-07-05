@@ -47,6 +47,11 @@ function renderHighScore() {
     for (let i = 0; i < highScorearray.length; i++) {
         console.log("in for loop....");
         highScore = highScorearray[i];
+        console.log("highScore" + highScore);
+        console.log("highScore[i]" + highScore[i]);
+        console.log("highScore.score" + highScore.initials);
+        console.log("highScore.initials" + highScore.initials);
+
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html("Highscore - " + highScore.score + "------" + highScore.initials);
     }
 
