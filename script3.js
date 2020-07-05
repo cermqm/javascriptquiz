@@ -1,6 +1,8 @@
 // Declare Global Variables
 var highScoreList = document.querySelector("#hs");
-var highScore = [];
+var highScore = {};
+var highScorehold = {};
+var highScorearray = [];
 var dhighScore = document.querySelector("#dhS")
 
 
