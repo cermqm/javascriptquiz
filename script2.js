@@ -125,7 +125,8 @@ function storeHighScore(score, ini) {
     // console.log("writeHighScore = " + writeHighScore);
     // console.log("highScore = " + highScore);
     // highScore.push(writeHighScore);
-    localStorage.setItem("highScore", JSON.stringify(highScore));
+    localStorage.setItem("highScore", JSON.stringify(highScorearray));
+    console.log("highScorearray = " + highScorearray);
     // console.log("highScore = " + highScore);
     window.location.href = "highscores.html";
 }
