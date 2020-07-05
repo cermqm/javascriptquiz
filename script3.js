@@ -49,6 +49,9 @@ function renderHighScore() {
         console.log("highScore.initials = " + highScore.initials);
 
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
+        if (i === 5) {
+            i = highScorearray.length;
+        }
     }
 
 }
