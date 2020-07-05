@@ -99,9 +99,10 @@ function startq() {
 }
 
 init();
-console.log("highScore" + highScore);
+console.log("highScore = " + highScore);
 
 function init(parameter) {
+    console.log("in init...")
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
