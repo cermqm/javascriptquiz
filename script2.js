@@ -2,6 +2,7 @@
 var highScoreList = document.querySelector("#hs");
 // var highScore = [];
 var highScore = {};
+var highScoreobj = [];
 var dhighScore = document.querySelector("#dhS")
 
 
@@ -105,6 +106,7 @@ function init(parameter) {
     console.log("storedHighScore = " + storedHighScore);
     if (storedHighScore !== null) {
         highScore = storedHighScore;
+        console.log("highScore = " + highScore);
     }
 }
 
