@@ -37,26 +37,31 @@ function qph(z) {
 
         // ------------------------------------------------------------------------------------
 
-        $("<div>").insertAfter("#submitmca").attr({ id: "rightorwrong" });
-        $("<div>").insertAfter("#rightorwrong").attr({ id: "rorw" });
+        $("<h4>").insertAfter("#submitmca").attr({ id: "rightorwrong" });
+        $("<h4>").insertAfter("#rightorwrong").attr({ id: "rorw" });
 
         // ------------------------------------------------------------------------------------
 
-        $("<div>").insertAfter("#rorw").attr({ id: "rorw2" }).html("</br>");
-        $("<div>").insertAfter("#rorw2").attr({ id: "s" });
+        $("<h4>").insertAfter("#rorw").attr({ id: "rorw2" }).html("</br>");
+        $("<h4>").insertAfter("#rorw2").attr({ id: "s" });
 
         // ------------------------------------------------------------------------------------
 
-        $("<div>").insertAfter("#s").attr({ id: "s2" }).html("</br>");
-        $("<div>").insertAfter("#s2").attr({ id: "t" }).html(" Seconds Left...");
+        $("<div>").insertAfter("#s").attr({ id: "s2" });
+        $("<h4>").insertAfter("#s2").attr({ id: "t" });
+        $("<h4>").insertAfter("#t").attr({ id: "t2" }).html("Seconds Left ");
 
         //------------------------------------------------------------------------------------
 
-        pushhighScore = document.createElement("h2");
-        pushhighScore.setAttribute("id", "dhS");
-        document.body.append(pushhighScore);
+        // $("<div>").insertAfter("#t2").attr({ id: "ss" }).html("</br>");
+        // $("<h2>").insertAfter("#ss").attr({ id: "ss2" }).html("Top 5 High Scores");
+        // $("<h4>").insertAfter("#ss2").attr({ id: "dhS" });
 
-        $("body").append("</br>");
+        // pushhighScore = document.createElement("h2");
+        // pushhighScore.setAttribute("id", "dhS");
+        // document.body.append(pushhighScore);
+
+        // $("body").append("</br>");
 
         firstTime = 0;
 

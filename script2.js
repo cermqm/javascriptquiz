@@ -11,14 +11,12 @@ timeleft = 450;
 var ini = "";
 
 writequestions();
-// startq();
 
-// startpage();
 
 // changing to jquery methods...
 
 function writeqandmc(z) {
-    console.log("questions[z].qu = " + questions[z].qu);
+    // console.log("questions[z].qu = " + questions[z].qu);
 
     $('#q').html(questions[z].qu);
     $('#c1').html(questions[z].mc1);
@@ -39,15 +37,15 @@ function submit() {
     for (var x = 0, length = radios.length; x < length; x++) {
         if (radios[x].checked) {
             val = radios[x].value;
-            console.log("val = " + val);
+            // console.log("val = " + val);
             break;
         }
     }
-    console.log("z = " + z);
-    console.log("val = " + val);
-    console.log("questions[z] = " + questions[z].a);
+    // console.log("z = " + z);
+    // console.log("val = " + val);
+    // console.log("questions[z] = " + questions[z].a);
     if (questions[z].a === val) {
-        console.log("questions[z].a = " + questions[z].a);
+        // console.log("questions[z].a = " + questions[z].a);
         $("#rorw").html("Your Answer is Correct...")
         score++
         $("#s").html("Score = " + score);
@@ -57,38 +55,44 @@ function submit() {
     }
 
     z++;
-
-    if ((z < questions.length) && (timeleft !== 0)) {
+    console.log("z = " + z);
+    console.log("questions.length = " + questions.length);
+    console.log("timeleft = " + timeleft);
+    if ((z < questions.length) && (timeleft >= 0)) {
         var radiochoose = document.getElementsByName("choice");
         for (var i = 0; i < radiochoose.length; i++)
             radiochoose[i].checked = false;
         writeqandmc(z);
     } else {
-        initialsplace = document.createElement("input");
-        initialsplace.setAttribute("id", "ini");
-        initialsplace.innerHTML = "Enter your initials and click to save high score";
-        initialsplace.autofocus = true;
-        document.body.append(initialsplace);
+        $("#submitmca").remove();
+        $("<div>").insertAfter("#t2").attr({ id: "ini1" }).html("</br>");
+        $("<input>").insertAfter("#ini1").attr({ type: "text", id: "ini" });
+        $("<div>").insertAfter("#ini").attr({ id: "ini2" }).html("</br></br></br>");
 
-        $("body").append("</br>");
-        $("body").append("</br>");
+        $("<h2>").insertAfter("#ini2").attr({ id: "ini3", type: "button", class: "btn btn-success" }).html("Enter your initials and click to save high score...");
 
-        // ------------------------------------------------------------------------------------
-
-        var saveb = document.createElement("button");
-        saveb.setAttribute("id", "savehs");
-        saveb.innerHTML = "Save";
-        document.body.appendChild(saveb);
-
-        $("body").append("</br>");
-
-
-        document.getElementById("savehs").addEventListener("click", function(event) {
-            // var initials = document.getElementById("ini").innerHTML;
+        $("#ini3").on("click", function() {
             var initials = document.querySelector("#ini");
             console.log("initials in save button = " + initials.value);
             writescore(initials.value);
         });
+
+        // ------------------------------------------------------------------------------------
+
+        // var saveb = document.createElement("button");
+        // saveb.setAttribute("id", "savehs");
+        // saveb.innerHTML = "Save";
+        // document.body.appendChild(saveb);
+
+        // $("body").append("</br>");
+
+
+        // document.getElementById("savehs").addEventListener("click", function(event) {
+        //     // var initials = document.getElementById("ini").innerHTML;
+        //     var initials = document.querySelector("#ini");
+        //     console.log("initials in save button = " + initials.value);
+        //     writescore(initials.value);
+        // });
 
         // ------------------------------------------------------------------------------------
 
@@ -100,7 +104,7 @@ function submit() {
 
 function writescore(ini) {
     storeHighScore(score, ini);
-    renderHighScore();
+    // renderHighScore();
 }
 
 function cleanuphtml() {
@@ -110,26 +114,6 @@ function cleanuphtml() {
         document.body.removeChild(lista[i])
     }
 }
-
-// function startpage() {
-//     // ------------------------------------------------------------------------------------
-//     // <div class="card bg-dark text-white">
-//     // $("div").insertAfter(".wrapper").attr({ class: "card bd-dark text-white", id: "1stcardtag" });
-//     // <img src="ones-and-zeros.jpg" class="card-img" alt="Password Generator" style="height: 100vh;">
-//     // $('#theDiv').prepend($('<img>',{id:'theImg',src:'theImg.png'}))
-
-//     // $("#1stcardtag").prepend.($('<img>',{id:"2ndcardtag",src:"ones-and-zeros.jpg"}));
-//     // class="card-img" alt="Password Generator"  style="height: 100vh" />');
-
-//     $("h2").insertAfter("#insidecard").attr({ id: "th2" }).html("JavaScript Quiz!!" + "</br></br></br>");
-//     $("#th2").append("Click Start to begin..." + "</br></br></br>");
-//     $("#th2").append("Start").attr({ id: "startquiz" });
-//     $("#startquiz").attr("css", { color: "red" });
-//     $("#startquiz").on("click", function() {
-//         startq();
-//     });
-//     // ------------------------------------------------------------------------------------
-// }
 
 function startq() {
     // event.preventDefault();
@@ -167,12 +151,12 @@ function renderHighScore() {
 
     // var lihighScore = document.createElement("h2");
 
-    pushhighScoreLabel = document.createElement("h2");
-    pushhighScoreLabel.innerHTML = "High Scores";
-    document.body.append(pushhighScoreLabel);
+    // pushhighScoreLabel = document.createElement("h2");
+    // pushhighScoreLabel.innerHTML = "High Scores";
+    // document.body.append(pushhighScoreLabel);
 
-    var dhighScore = document.querySelector("#dhS")
-    dhighScore.innerHTML = "";
+    // var dhighScore = document.querySelector("#dhS")
+    // dhighScore.innerHTML = "";
     var container = document.createElement("div");
 
     for (let i = 0; i < highScore.length; i++) {
@@ -188,9 +172,8 @@ function renderHighScore() {
         lihighScore.appendChild(button);
         container.appendChild(lihighScore);
     }
-    // dhighScore.innerHTML = lihighScore.textContent;
 
-    dhighScore.appendChild(container);
+    // dhighScore.appendChild(container);
 }
 
 
