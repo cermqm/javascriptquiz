@@ -49,7 +49,7 @@ function qph(firstTime) {
 
         // ------------------------------------------------------------------------------------
 
-        $("<div>").insertAfter("#s").attr({ id: "s2" });
+        $("<div>").insertAfter("#s").attr({ id: "s2" }).html("</br></br>");
         $("<h4>").insertAfter("#s2").attr({ id: "t" });
         $("<h4>").insertAfter("#t").attr({ id: "t2" }).html("Seconds Left ");
 
