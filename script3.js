@@ -3,6 +3,7 @@ var highScoreList = document.querySelector("#hs");
 var highScore = {};
 var highScorehold = {};
 var highScorearray = [];
+var highScorearraytemp = [];
 var dhighScore = document.querySelector("#dhS")
 
 
@@ -14,7 +15,6 @@ var ini = "";
 
 init();
 renderHighScore();
-sorthighscores();
 
 
 function init(parameter) {
@@ -31,6 +31,9 @@ function renderHighScore() {
     $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
     $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
     $("#dhS").empty();
+
+    sorthighscores();
+
 
     for (let i = 0; i < highScorearray.length; i++) {
 
@@ -73,11 +76,12 @@ function sorthighscores() {
                 var highScorestring = { score: score, initials: initials };
                 highScorehold = highScorestring;
                 console.log("highScorehold = " + highScorehold);
-                // highScorearray.push(highScorehold);
+                // highScorearraytemp.push(highScorehold);
+                highScorearraytemp.push(highScorehold);
             }
         }
     }
-    // localStorage.setItem("highScore", JSON.stringify(highScorearray));
+    localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
     // window.location.href = "highscores.html";
 
 }
