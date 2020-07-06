@@ -35,7 +35,7 @@ function renderHighScore() {
     sorthighscores();
 
 
-    for (let i = 0; i < highScorearraytemp.length; i++) {
+    for (let i = (highScorearray.length - 1); i >= 0 highScorearraytemp.length; i--) {
 
         highScore = highScorearraytemp[i];
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
