@@ -71,8 +71,8 @@ function sorthighscores() {
                 var score = highScorearray[i].score;
                 var initials = highScorearray[i].initials;
                 var highScorestring = { score: score, initials: initials };
-                // highScorehold = highScorestring;
-                // console.log("highScorehold = " + highScorehold);
+                highScorehold = highScorestring;
+                console.log("highScorehold = " + highScorehold);
                 // highScorearray.push(highScorehold);
             }
         }
