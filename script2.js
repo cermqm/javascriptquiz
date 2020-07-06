@@ -6,8 +6,8 @@ var highScorearray = [];
 var dhighScore = document.querySelector("#dhS")
 
 
-// var z = 0;
-// firstTime = 0;
+var z = 0;
+firstTime = 0;
 score = 0;
 timeleft = 450;
 var ini = "";
@@ -85,7 +85,7 @@ function cleanuphtml() {
 }
 
 function startq() {
-    var z = 0;
+    // var z = 0;
     var firstTime = 1;
     qph(firstTime); //write question place holders
     starttimer();
