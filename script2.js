@@ -1,14 +1,13 @@
 // Declare Global Variables
 var highScoreList = document.querySelector("#hs");
-// var highScore = [];
 var highScore = {};
 var highScorehold = {};
 var highScorearray = [];
 var dhighScore = document.querySelector("#dhS")
 
 
-var z = 0;
-firstTime = 0;
+// var z = 0;
+// firstTime = 0;
 score = 0;
 timeleft = 450;
 var ini = "";
@@ -86,8 +85,9 @@ function cleanuphtml() {
 }
 
 function startq() {
-    firstTime = 1;
-    qph(); //write question place holders
+    var z = 0;
+    var firstTime = 1;
+    qph(firstTime); //write question place holders
     starttimer();
     writeqandmc(z);
 

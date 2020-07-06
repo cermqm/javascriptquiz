@@ -1,14 +1,3 @@
-// Declare Global Variables
-var highScoreList = document.querySelector("#hs");
-var dhighScore = document.querySelector("#dhS")
-
-
-var z = 0;
-firstTime = 0;
-score = 0;
-var timeleft = 450;
-var ini = "";
-
 startpage();
 
 function startpage() {

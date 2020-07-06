@@ -1,4 +1,6 @@
-function qph(z) {
+function qph(firstTime) {
+
+    console.log(firstTime);
 
     if (firstTime === 1) {
 
