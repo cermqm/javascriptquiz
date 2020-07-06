@@ -34,14 +34,14 @@ function renderHighScore() {
 
     sorthighscores();
 
-    count = 0;
-    for (let i = (highScorearray.length - 1); i >= 0; i--) {
+
+    for (let i = 0; i < highScorearraytemp.length; i++) {
+
         highScore = highScorearraytemp[i];
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
-        if (count >= 4) {
+        if (i >= 4) {
             i = highScorearraytemp.length;
         }
-        count++
     }
 
 }
@@ -53,7 +53,7 @@ function sorthighscores() {
     for (let i = 0; i < highScorearray.length; i++) {
         console.log("shs = " + shs);
         shs.push(highScorearray[i].score);
-        sortedarray = shs.sort((a, b) => a - b);
+        sortedarray = shs.sort((a, b) => b - a);
         console.log("sortedarray = " + sortedarray);
     }
 
