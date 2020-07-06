@@ -69,8 +69,8 @@ function sorthighscores() {
             if (sortedarray[x] === highScorearray[i].score) {
                 console.log("inside if statement - sorting...");
                 var score = highScorearray[i].score;
-                // var initials = highScorearray[i].initials;
-                // var highScorestring = { score: score, initials: initials };
+                var initials = highScorearray[i].initials;
+                var highScorestring = { score: score, initials: initials };
                 // highScorehold = highScorestring;
                 // console.log("highScorehold = " + highScorehold);
                 // highScorearray.push(highScorehold);
