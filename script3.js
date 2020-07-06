@@ -29,7 +29,8 @@ function renderHighScore() {
 
     $("<div>").insertAfter("#insidecard").attr({ id: "ic1" }).html("</br>");
     $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
-    $("<h4>").insertAfter("#ic2").attr({ id: "dhS" });
+    $("<div>").insertAfter("#ic2").attr({ id: "ic3" }).html("</br></br></br>");
+    $("<h4>").insertAfter("#ic3").attr({ id: "dhS" });
     $("#dhS").empty();
 
     sorthighscores();
