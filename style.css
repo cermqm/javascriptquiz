@@ -46,6 +46,10 @@ input {
     color: white;
 }
 
+#s2 {
+    margin-top: 20px;
+}
+
 h2 span {
     display: block;
     margin-left: 125px;
