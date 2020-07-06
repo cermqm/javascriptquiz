@@ -34,14 +34,14 @@ function renderHighScore() {
 
     sorthighscores();
 
-
+    count = 0;
     for (let i = (highScorearray.length - 1); i >= 0; i--) {
-
         highScore = highScorearraytemp[i];
         $("<h2>").insertAfter("#dhS").attr({ id: "dhS2" }).html(highScore.score + "  ------  " + highScore.initials);
-        if (i >= 4) {
+        if (count >= 4) {
             i = highScorearraytemp.length;
         }
+        count++
     }
 
 }
