@@ -50,9 +50,26 @@ function sorthighscores() {
     for (let i = 0; i < highScorearray.length; i++) {
         console.log("shs = " + shs);
         shs.push(highScorearray[i].score);
-        sortedarray = shs.sort((a, b) => b - a);
+        sortedarray = shs.sort((a, b) => a - b);
         console.log("sortedarray = " + sortedarray);
-
     }
+
+    for (let x = 0; x < sortedarray.length; x++) {
+        console.log("x = " + x);
+        for (let i = 0; i < highScorearray.length; i++) {
+            console.log("i = " + i);
+            console.log("sortedarray[x] = " + sortedarray[x]);
+            console.log("highScorearray = " + highScorearray[i]);
+            if (sortedarray[x] === highScorearray[i].score) {
+                console.log("inside if statement - sorting...");
+                var highScorestring = { score: score, initials: initials };
+                highScorehold = highScorestring;
+                console.log("highScorehold = " + highScorehold);
+                highScorearray.push(highScorehold);
+            }
+        }
+    }
+    localStorage.setItem("highScore", JSON.stringify(highScorearray));
+    window.location.href = "highscores.html";
 
 }
