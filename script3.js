@@ -29,7 +29,7 @@ function renderHighScore() {
 
     $("<div>").insertAfter("#insidecard").attr({ id: "ic1" }).html("</br>");
     $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
-    $("<div>").insertAfter("#ic2").attr({ id: "ic3" }).html("</br></br></br>");
+    $("<div>").insertAfter("#ic2").attr({ id: "ic3" }).html("</br></br>");
     $("<h4>").insertAfter("#ic3").attr({ id: "dhS" });
     $("#dhS").empty();
 
