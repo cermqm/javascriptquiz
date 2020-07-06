@@ -55,3 +55,15 @@ h2 span {
     margin-left: 125px;
     margin-top: 20px;
 }
+
+#radioc1,
+#radioc2,
+#radioc3,
+#radioc4 {
+    background-color: #D6EEFF;
+    border-radius: 5px;
+    padding: 10px;
+    /* margin: 20px 40px 20px 0; */
+    font-size: 20px;
+    cursor: pointer;
+}
