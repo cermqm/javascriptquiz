@@ -62,7 +62,6 @@ function sorthighscores() {
 
 
     for (let x = 0; x < sortedarray.length; x++) {
-        console.log("x = " + x);
         for (let i = 0; i < highScorearray.length; i++) {
             console.log("x = " + x);
             console.log("i = " + i);
@@ -78,10 +77,11 @@ function sorthighscores() {
                 console.log("highScorehold = " + highScorehold);
                 // highScorearraytemp.push(highScorehold);
                 highScorearraytemp.push(highScorehold);
+                console.log("highScorearraytemp = " + highScorearraytemp);
             }
         }
     }
-    localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
+    // localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
     // window.location.href = "highscores.html";
 
 }
