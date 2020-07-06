@@ -99,12 +99,12 @@ function writequestions() {
         mc4: "D - All of the above",
         a: "D"
     }, {
-        qu: "15 - The snippet that has to be used to check if 'a' is not equal to 'null' is _______",
-        mc1: "A - if(a!=null)",
-        mc2: "B - if (!a)",
-        mc3: "C - if(a!null)",
-        mc4: "D - if(a!==null)",
-        a: "D"
+        qu: "15 - Which of the following function of String object returns the calling string value converted to lower case?",
+        mc1: "A - toLocaleLowerCase()",
+        mc2: "B - toLowerCase()",
+        mc3: "C - toString()",
+        mc4: "D - substring()",
+        a: "B"
     }, {
         qu: "16 - The 'var' and 'function' are _________",
         mc1: "A - Keywords",
