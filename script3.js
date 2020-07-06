@@ -14,6 +14,7 @@ var ini = "";
 
 init();
 renderHighScore();
+sorthighscores();
 
 
 function init(parameter) {
@@ -38,6 +39,20 @@ function renderHighScore() {
         if (i >= 4) {
             i = highScorearray.length;
         }
+    }
+
+}
+
+function sorthighscores() {
+    init();
+    var shs = [];
+    var sortedarray = [];
+    for (let i = 0; i < highScorearray.length; i++) {
+        console.log("shs = " + shs);
+        shs.push(highScorearray[i].score);
+        sortedarray = shs.sort();
+        console.log("sortedarray = " + sortedarray);
+
     }
 
 }
