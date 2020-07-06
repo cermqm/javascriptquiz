@@ -50,7 +50,7 @@ function sorthighscores() {
     for (let i = 0; i < highScorearray.length; i++) {
         console.log("shs = " + shs);
         shs.push(highScorearray[i].score);
-        sortedarray = shs.sort(comparefunction);
+        sortedarray = shs.sort((a, b) => a - b);
         console.log("sortedarray = " + sortedarray);
 
     }
