@@ -75,7 +75,7 @@ function sorthighscores() {
     //         }
     //     }
     // }
-    localStorage.setItem("highScore", JSON.stringify(highScorearray));
-    window.location.href = "highscores.html";
+    // localStorage.setItem("highScore", JSON.stringify(highScorearray));
+    // window.location.href = "highscores.html";
 
 }
