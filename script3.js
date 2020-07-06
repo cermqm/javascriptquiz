@@ -54,23 +54,27 @@ function sorthighscores() {
         console.log("sortedarray = " + sortedarray);
     }
 
-    for (let x = 0; x < sortedarray.length; x++) {
-        console.log("x = " + x);
-        for (let i = 0; i < highScorearray.length; i++) {
-            console.log("i = " + i);
-            console.log("sortedarray[x] = " + sortedarray[x]);
-            console.log("highScorearray[i] = " + highScorearray[i]);
-            if (sortedarray[x] === highScorearray[i].score) {
-                console.log("inside if statement - sorting...");
-                var score = highScorearray[i].score;
-                var initials = highScorearray[i].initials;
-                var highScorestring = { score: score, initials: initials };
-                highScorehold = highScorestring;
-                console.log("highScorehold = " + highScorehold);
-                highScorearray.push(highScorehold);
-            }
-        }
-    }
+    console.log("sortedarray.length = " + sortedarray.length);
+    console.log("highScorearray.length = " + highScorearray.length);
+
+
+    // for (let x = 0; x < sortedarray.length; x++) {
+    //     console.log("x = " + x);
+    //     for (let i = 0; i < highScorearray.length; i++) {
+    //         console.log("i = " + i);
+    //         console.log("sortedarray[x] = " + sortedarray[x]);
+    //         console.log("highScorearray[i] = " + highScorearray[i]);
+    //         if (sortedarray[x] === highScorearray[i].score) {
+    //             console.log("inside if statement - sorting...");
+    //             var score = highScorearray[i].score;
+    //             var initials = highScorearray[i].initials;
+    //             var highScorestring = { score: score, initials: initials };
+    //             highScorehold = highScorestring;
+    //             console.log("highScorehold = " + highScorehold);
+    //             highScorearray.push(highScorehold);
+    //         }
+    //     }
+    // }
     localStorage.setItem("highScore", JSON.stringify(highScorearray));
     window.location.href = "highscores.html";
 
