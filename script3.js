@@ -81,7 +81,7 @@ function sorthighscores() {
             }
         }
     }
-    // localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
+    localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
     // window.location.href = "highscores.html";
 
 }
