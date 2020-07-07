@@ -3,6 +3,10 @@ HW#3 JavaScript Quiz was created using html, javascript, jquery with a bit of cs
 
 The project was more difficult than the last and more interesting.  jquery makes more sense to me but I still have some learning to do.
 
+github for this homework - https://github.com/cermqm/javascriptquiz
+
+website for this homework - https://cermqm.github.io/javascriptquiz/
+
 There are screen shots of the app scaling and being used on the following google drive.
 
 https://drive.google.com/drive/folders/1kugBT6ptWB74fOujiJvY-0IkIYmjmZrd?usp=sharing
