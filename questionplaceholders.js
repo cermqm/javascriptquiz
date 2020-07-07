@@ -1,4 +1,4 @@
-Create place holders
+// Create place holders
 // for questions, multiple choices, write or wrong Text, score and countdown TimeRanges...
 
 function qph(firstTime) {
