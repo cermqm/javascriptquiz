@@ -4,14 +4,13 @@ var highScore = {};
 var highScorehold = {};
 var highScorearray = [];
 var dhighScore = document.querySelector("#dhS")
-
-
 var z = 0;
 firstTime = 0;
 score = 0;
 timeleft = 450;
 var ini = "";
 
+// write questions function to write questions into placeholders - input z - z in incremented to move to next question...
 writequestions();
 
 function writeqandmc(z) {
@@ -22,10 +21,11 @@ function writeqandmc(z) {
     $('#c3').html(questions[z].mc3);
     $('#c4').html(questions[z].mc4);
 
-    // renderHighScore();
-
 }
 
+// submit function to pull slection from radio buttons and compare to answer
+// It also increment score if correct - take 30 seconds off of the clock if wrong...
+// The function also checks the timer and if <= 0 - stops quiz...
 function submit() {
 
     var val = "";
@@ -72,18 +72,22 @@ function submit() {
 
 }
 
+// function write score - calls storeHighScore to write scores to local Storage...
 function writescore(ini) {
     storeHighScore(score, ini);
 }
 
-function cleanuphtml() {
 
-    var lista = document.body.childNodes;
-    for (var i = lista.length - 1; i >= 0; i--) {
-        document.body.removeChild(lista[i])
-    }
-}
+// function cleanuphtml() {
 
+//     var lista = document.body.childNodes;
+//     for (var i = lista.length - 1; i >= 0; i--) {
+//         document.body.removeChild(lista[i])
+//     }
+// }
+
+Start quiz
+// function -sets firsttime variable and calls qph, starttimer and writeqandmc...
 function startq() {
     // var z = 0;
     var firstTime = 1;
@@ -95,6 +99,7 @@ function startq() {
 
 init();
 
+// init function to pull highscores if there are any and put into highScorearray...
 function init(parameter) {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     if (storedHighScore !== null) {
@@ -103,6 +108,7 @@ function init(parameter) {
     }
 }
 
+// function to store the high scores in local Storage...
 function storeHighScore(score, initials) {
     var highScorestring = { score: score, initials: initials };
     highScorehold = highScorestring;

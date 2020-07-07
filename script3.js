@@ -5,8 +5,6 @@ var highScorehold = {};
 var highScorearray = [];
 var highScorearraytemp = [];
 var dhighScore = document.querySelector("#dhS")
-
-
 var z = 0;
 firstTime = 0;
 score = 0;
@@ -16,7 +14,7 @@ var ini = "";
 init();
 renderHighScore();
 
-
+// pull highscores from local storage and assign to highScorearray...
 function init(parameter) {
     var storedHighScore = JSON.parse(localStorage.getItem("highScore"));
     if (storedHighScore !== null) {
@@ -24,8 +22,9 @@ function init(parameter) {
     }
 }
 
+// render high scores onto screen...
+// only display top 5
 function renderHighScore() {
-
 
     $("<div>").insertAfter("#insidecard").attr({ id: "ic1" }).html("</br>");
     $("<h2>").insertAfter("#ic1").attr({ id: "ic2" }).html("Top 5 High Scores");
@@ -47,6 +46,7 @@ function renderHighScore() {
 
 }
 
+// sort the high scores highest to lowest...
 function sorthighscores() {
     init();
     var shs = [];

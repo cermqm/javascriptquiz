@@ -1,3 +1,5 @@
+// Function to put questions into the Object.
+
 function writequestions() {
 
     questions = [{
@@ -211,6 +213,4 @@ function writequestions() {
         mc4: "D - #",
         a: "C"
     }];
-    // console.log(questions);
-
 }

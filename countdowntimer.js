@@ -1,3 +1,6 @@
+// Function for countdown Timer...
+//uses timeleft variable for inital time in seconds...
+
 function starttimer() {
     var countDown = function() {
         var $elem = $(this);
