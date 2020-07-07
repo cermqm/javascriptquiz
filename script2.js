@@ -86,7 +86,7 @@ function writescore(ini) {
 //     }
 // }
 
-// Start quit function -sets firsttime variable and calls qph, starttimer and writeqandmc...
+// Start quiz function - sets firsttime variable and calls qph, starttimer and writeqandmc...
 function startq() {
     // var z = 0;
     var firstTime = 1;

@@ -69,17 +69,17 @@ function sorthighscores() {
             console.log("sortedarray[x] = " + sortedarray[x]);
             console.log("highScorearray[i].score = " + highScorearray[i].score);
             console.log("highScorearray[i].initials = " + highScorearray[i].initials);
-            if (sortedarray[x] === highScorearray[i].score) {
-                console.log("inside if statement - sorting...");
-                var score = highScorearray[i].score;
-                var initials = highScorearray[i].initials;
-                var highScorestring = { score: score, initials: initials };
-                highScorehold = highScorestring;
-                console.log("highScorehold = " + highScorehold);
-                // highScorearraytemp.push(highScorehold);
-                highScorearraytemp.push(highScorehold);
-                console.log("highScorearraytemp = " + highScorearraytemp);
-            }
+            // if (sortedarray[x] === highScorearray[i].score) {
+            //     console.log("inside if statement - sorting...");
+            //     var score = highScorearray[i].score;
+            //     var initials = highScorearray[i].initials;
+            //     var highScorestring = { score: score, initials: initials };
+            //     highScorehold = highScorestring;
+            //     console.log("highScorehold = " + highScorehold);
+            //     // highScorearraytemp.push(highScorehold);
+            //     highScorearraytemp.push(highScorehold);
+            //     console.log("highScorearraytemp = " + highScorearraytemp);
+            // }
         }
     }
     localStorage.setItem("highScore", JSON.stringify(highScorearraytemp));
