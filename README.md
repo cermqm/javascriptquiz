@@ -11,6 +11,8 @@ There are screen shots of the app scaling and being used on the following google
 
 https://drive.google.com/drive/folders/1kugBT6ptWB74fOujiJvY-0IkIYmjmZrd?usp=sharing
 
+Technologies used: ● Bootstrap (CSS Library) ● Jquery (Javascript Function Shortcut) ● Font Awesome (Icon Library)
+
 
 # 04 Web APIs: Code Quiz
 
@@ -40,17 +42,12 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-The following animation demonstrates the application functionality:
+Bootstrap license - https://getbootstrap.com/docs/4.0/about/license/#:~:text=It%20permits%20you%20to%3A,parties%20not%20included%20in%20the
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+Font Awesome license - https://fontawesome.com/license/free
 
-### Review
+jQuery license - https://jquery.org/license/
 
-You are required to submit the following for review:
 
-* The URL of the functional, deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
